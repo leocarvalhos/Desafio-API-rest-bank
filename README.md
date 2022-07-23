@@ -401,7 +401,7 @@ Esse endpoint deverá realizar o saque de um valor em uma determinada conta banc
 }
 ```
 
-### Tranferir
+### Transferir
 
 #### `POST` `/transacoes/transferir`
 
