@@ -107,9 +107,8 @@ const depositar = (req, res) => {
 const sacar = (req, res) => {
   const { numero_conta, valor, senha } = req.body;
   let usuario = contas.find((elemento) => elemento.numero === Number(numero_conta));
-  let { saldo } = usuario;
-
   if (!usuario) return res.status(404).json({ mensagem: "Número de conta inválido" });
+  if (!valor) return res.status(404).json({ mensagem: "Valor não informado" });
   if (usuario.senha !== senha) return res.status(401).json({ mensagem: "Senha inválida" });
 
   if (saldo < valor) return res.status(403).json({ mensagem: "Saldo insuficiente" });
